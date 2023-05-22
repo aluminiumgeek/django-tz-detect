@@ -1,5 +1,5 @@
 {% load static %}
-{% if show %}
+{% if show or request.tz_detect_show %}
 <script type="text/javascript"{% for key, value in script_attrs.items %} {{ key }}="{{ value }}"{% endfor %}>
   var csrf_token = "{{ csrf_token }}";
   var tz_set_endpoint = '{% url "tz_detect__set" %}';
